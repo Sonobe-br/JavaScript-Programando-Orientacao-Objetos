@@ -9,17 +9,17 @@ class Cliente {
 class ContaCorrente {
     agencia;
     tipoDeConta;
-    _saldo;
+    saldo;
 
     sacar(valor){
-        if(this._saldo >= valor) {
-            this._saldo -= valor;
+        if(this.saldo >= valor) {
+            this.saldo -= valor;
         }
     }
 
     depositar(valor){
         if(valor > 0){
-            this._saldo += valor;
+            this.saldo += valor;
         }
     }
 } 
@@ -49,24 +49,16 @@ contaCorrenteAlice.saldo = 0;
 contaCorrenteAlice.agencia = 1001;
 contaCorrenteAlice.tipoDeConta = 'Conta Corrente';
 
-//console.log(cliente1, cliente2);
+console.log(cliente1, cliente2);
 console.log(contaCorrenteDaniel.saldo);
-//contaCorrenteDaniel.saldo += 100;
+contaCorrenteDaniel.saldo += 100;
 contaCorrenteDaniel.depositar(10000);
 contaCorrenteDaniel.sacar(50);
 console.log(contaCorrenteDaniel)
 
 
 console.log(contaCorrenteAlice.saldo);
-//contaCorrenteAlice.saldo += 500;
+contaCorrenteAlice.saldo += 500;
 contaCorrenteAlice.depositar(2200);
 contaCorrenteAlice.sacar(100);
 console.log(contaCorrenteAlice);
-
-/* console.log(cliente1);
-console.log(cliente2); */
-
-/* PRIVATE FIELDS - Como #saldo é um campo privado, não aparece ao executarmos o console.log() da classe. 
-Só é possível acessá-lo realmente dentro da classe. Ele está sendo alterado, mas só veremos 
-isso dentro da classe. Se chamarmos o console.log() em qualquer outro lugar do código, o #saldo 
-não aparecerá. */
