@@ -14,13 +14,16 @@ class ContaCorrente {
     sacar(valor){
         if(this.saldo >= valor) {
             this.saldo -= valor;
+            return valor;
         }
     }
 
     depositar(valor){
-        if(valor > 0){
-            this.saldo += valor;
+        if(valor <= 0) 
+        {
+        return;
         }
+        this.saldo += valor;  
     }
 } 
 
@@ -46,19 +49,23 @@ cliente2.endereçoResidencial = 'Avenida Beira Mar, 69';
 
 const contaCorrenteAlice = new ContaCorrente();
 contaCorrenteAlice.saldo = 0;
-contaCorrenteAlice.agencia = 1001;
-contaCorrenteAlice.tipoDeConta = 'Conta Corrente';
+contaCorrenteAlice.agencia = 1002;
+contaCorrenteAlice.tipoDeConta = 'Conta Poupança';
 
-console.log(cliente1, cliente2);
+
+//saídas
+//console.log(cliente1, cliente2);
 console.log(contaCorrenteDaniel.saldo);
-contaCorrenteDaniel.saldo += 100;
-contaCorrenteDaniel.depositar(10000);
-contaCorrenteDaniel.sacar(50);
-console.log(contaCorrenteDaniel)
+contaCorrenteDaniel.saldo += 500;
+contaCorrenteDaniel.depositar(1500);
+contaCorrenteDaniel.depositar(1700);
+contaCorrenteDaniel.sacar(100);
+console.log(contaCorrenteDaniel);
+/* const valorSacado = contaCorrenteDaniel.sacar(50);
+console.log(valorSacado) */
 
-
-console.log(contaCorrenteAlice.saldo);
 contaCorrenteAlice.saldo += 500;
-contaCorrenteAlice.depositar(2200);
-contaCorrenteAlice.sacar(100);
+contaCorrenteAlice.depositar(1500);
+contaCorrenteAlice.depositar(1500);
+contaCorrenteAlice.sacar(200);
 console.log(contaCorrenteAlice);
