@@ -9,11 +9,11 @@ class Cliente {
 class ContaCorrente {
     agencia;
     tipoDeConta;
-    saldo;
+    _saldo;
 
     sacar(valor){
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
+        if(this._saldo >= valor) {
+            this._saldo -= valor;
             return valor;
         }
     }
@@ -55,7 +55,7 @@ contaCorrenteAlice.tipoDeConta = 'Conta Poupança';
 
 //saídas
 //console.log(cliente1, cliente2);
-console.log(contaCorrenteDaniel.saldo);
+//console.log(contaCorrenteDaniel.saldo);
 contaCorrenteDaniel.saldo += 500;
 contaCorrenteDaniel.depositar(1500);
 contaCorrenteDaniel.depositar(1700);
@@ -69,3 +69,10 @@ contaCorrenteAlice.depositar(1500);
 contaCorrenteAlice.depositar(1500);
 contaCorrenteAlice.sacar(200);
 console.log(contaCorrenteAlice);
+
+
+/* PRIVATE FIELDS (#saldo || _saldo) - tornará o campo saldo em privado, não aparece ao executarmos o 
+console.log() da classe. 
+Só é possível acessá-lo realmente dentro da classe. Ele está sendo alterado, mas só veremos 
+isso dentro da classe. Se chamarmos o console.log() em qualquer outro lugar do código, o #saldo 
+não aparecerá. */
