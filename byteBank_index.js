@@ -56,7 +56,7 @@ contaCorrenteFlaviana.depositar(0);
 
 //transferencia entre contas
 contaCorrenteDaniel.transferir(100, contaCorrenteFlaviana);
-contaCorrenteAlice.transferir(10, contaCorrenteFlaviana);
+contaCorrenteAlice.transferir(15, contaCorrenteFlaviana);
 
 //output
 console.log(contaCorrenteDaniel,contaCorrenteAlice,contaCorrenteFlaviana);
